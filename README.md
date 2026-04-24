@@ -1,4 +1,4 @@
-# pixel-agents-python
+# python-pixel-agents
 
 
 forked from - https://github.com/pablodelucca/pixel-agents
@@ -46,7 +46,7 @@ so the existing browser viewer can be pointed at this Python backend.
 ## Run locally (no Docker)
 
 ```powershell
-cd C:\Projetos-Git\pixel-agents-python
+cd C:\Projetos-Git\python-pixel-agents
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -e .[dev]
@@ -65,11 +65,25 @@ Then open `http://localhost:8765/viewer/?token=dev-token-change-me`.
 ## Run via Docker Compose
 
 ```powershell
-cd C:\Projetos-Git\pixel-agents-python
+cd C:\Projetos-Git\python-pixel-agents
 Copy-Item .env.example .env
 docker compose up --build
 ```
 
+## Documentation
+
+Documentation for this project is built with MkDocs (Material theme) and lives in the `docs/` directory.
+
+Build and serve the docs locally (PowerShell):
+
+```powershell
+.venv\Scripts\Activate.ps1
+pip install -r docs/requirements.txt
+pip install -e .
+.venv\Scripts\python -m mkdocs build --clean
+# to preview locally
+.venv\Scripts\python -m mkdocs serve
+```
 ## Tests
 
 ```powershell
